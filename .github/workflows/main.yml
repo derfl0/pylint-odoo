@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'test'
 
 jobs:
   docker:
@@ -27,3 +28,5 @@ jobs:
         with:
           push: true
           tags: fbieringer/pylint-odoo:latest
+          cache-to: type=registry,ref=fbieringer/pylint-odoo-cache
+          cache-from: type=registry,ref=fbieringer/pylint-odoo-cache
